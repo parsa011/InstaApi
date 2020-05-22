@@ -5,10 +5,9 @@ namespace InstaApi.Common.ViewModels.Auth
 {
     public class LoginViewModel
     {
-        [EmailAddress(ErrorMessage = "ایمیل وارد شده صحیح نمیباشد")]
-        [DisplayName("ایمیل")]       
+        [DisplayName("نام کاربری")]       
         [Required(ErrorMessage = "لطفا {0} را پر کنید")]
-        public string Email { get; set; }
+        public string UserName { get; set; }
 
         [DataType(DataType.Password)]
         [DisplayName("گذرواژه")]

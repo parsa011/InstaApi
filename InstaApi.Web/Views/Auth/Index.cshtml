@@ -22,10 +22,10 @@
             <div class="content-Login">
                 <p>Instagram</p>
                 <hr>
-                <form class="form" action="" method="post">
+                <form class="form" asp-action="Login" asp-controller="Auth" method="post">
                     <div class="form-row">
-                        ایمیل: <input asp-for="Email" class="form-contorl" />
-                        <span class="text-danger" asp-validation-for="Email"></span>
+                        نام کاربری: <input asp-for="UserName" class="form-contorl" />
+                        <span class="text-danger" asp-validation-for="UserName"></span>
                     </div>
                     <div class="form-row">
                         رمز ورود :<input asp-for="Password" class="form-contorl" />
