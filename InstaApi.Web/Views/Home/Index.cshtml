@@ -75,13 +75,17 @@
                     <i id="icon-left" style="margin-left: 9px;" class="fa fa-paper-plane-o"></i>
                     <i id="icon-lefts" onclick="mylikebt(this)" class="fa fa-heart-o"></i>
                     <p class="mt-3">Likes @item.LikesCount</p>
+                    @foreach(var likers in item.Likers)
+                    {
+                        <span>@likers.UserName -</span>
+                    }
                     <p class="mt-3 mb-3"> <span class="text-muted">
                         @item.Caption.Text
                     </span> : ali</p>
                     <a class="text-muted" href="#!">
                         Comment ALL
                     </a>
-                    <h2 class="text-muted mt-3 mb-2">@item.TakenAt</h2>
+                    <h2 class="text-muted mt-3 mb-2">@item.TakenAt.ToPersianDateString() - @item.TakenAt.TimeOfDay</h2>
                     <div class="comment-input">
                         <input id="massegeComment" type="text" />
                         <div id="Text-comment" class="Text-comment">

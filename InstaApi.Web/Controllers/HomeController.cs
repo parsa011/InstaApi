@@ -19,7 +19,7 @@ namespace InstaApi.Web.Controllers
             var api = await LoginHelper.GetApi();
             var inbox = await api.MessagingProcessor 
                 .GetDirectInboxAsync(PaginationParameters.MaxPagesToLoad(1));
-            var feed = await api.FeedProcessor.GetUserTimelineFeedAsync(PaginationParameters.MaxPagesToLoad(3));
+            var feed = await api.FeedProcessor.GetUserTimelineFeedAsync(PaginationParameters.MaxPagesToLoad(2));
             return View(new IndexViewModel
             {
                 Inbox = inbox,
