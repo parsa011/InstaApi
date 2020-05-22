@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using InstagramApiSharp.Classes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InstaApi.Web.Controllers
@@ -10,6 +11,7 @@ namespace InstaApi.Web.Controllers
     {
         public IActionResult Index()
         {
+            
             return View();
         }
     }

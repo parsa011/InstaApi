@@ -1,7 +1,48 @@
-﻿
+﻿@model InstaApi.Common.ViewModels.Auth.LoginViewModel
 @{
-    ViewData["Title"] = "Index";
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>Index</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-instagram</title>
+    <link href="~/css/reset.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="~/css/IndexStyle.css" rel="stylesheet" />
 
+</head>
+
+<body>
+<main>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+        <div class="Login">
+            <div class="content-Login">
+                <p>Instagram</p>
+                <hr>
+                <form class="form" action="" method="post">
+                    <div class="form-row">
+                        ایمیل: <input asp-for="Email" class="form-contorl" />
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                    </div>
+                    <div class="form-row">
+                        رمز ورود :<input asp-for="Password" class="form-contorl" />
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <hr>
+                    <input type="submit" class="btn btn-success" value="Login">
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</body>
+
+</html>

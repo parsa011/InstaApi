@@ -5,11 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="InstagramApiSharp" Version="1.5.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <PackageReference Include="NToastNotify" Version="6.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Views\Auth\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InstaApi.Common\InstaApi.Common.csproj" />
   </ItemGroup>
 
 </Project>

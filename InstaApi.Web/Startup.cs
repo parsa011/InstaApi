@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NToastNotify;
 
 namespace InstaApi.Web
 {
@@ -23,7 +24,19 @@ namespace InstaApi.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();//.AddRazorRuntimeCompilation();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation().AddNToastNotifyToastr(new ToastrOptions()
+            {
+                ProgressBar = true,
+                PreventDuplicates = true,
+                NewestOnTop = true
+            }, new NToastNotifyOption
+            {
+                DefaultSuccessTitle = "موفقیت",
+                DefaultAlertTitle = "هشدار",
+                DefaultWarningTitle = "اخطار",
+                DefaultErrorTitle = "خطا"
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
