@@ -41,7 +41,6 @@ input{
 body {
     line-height: 1;
     font-family: IRANSans !important;
-    background: url('../Images/bg.png');
     font-size: 15px !important;
     direction: rtl;
 }
@@ -72,25 +71,26 @@ table {
 
 }
 
-@font-face {
+/*@font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: normal;
-    src: url('../Fonts/IrasnSANSE/Iran-Sans.eot');
-    src: url('../Fonts/IrasnSANSE/Iran-Sans.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-         url('../Fonts/IrasnSANSE/Iran-Sans.woff2') format('woff2'),  /* Chrome36+, Opera24+*/
-         url('../Fonts/IrasnSANSE/Iran-Sans.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-         url('../Fonts/IrasnSANSE/Iran-Sans.ttf') format('truetype');
-}
+    src: url('~/fonts/font_Medium.eot');
+    src: url('~/Fonts/IrasnSANSE/Iran-Sans.eot?#iefix') format('embedded-opentype'),  
+         url('~/Fonts/IrasnSANSE/Iran-Sans.woff2') format('woff2'), 
+         url('~/Fonts/IrasnSANSE/Iran-Sans.woff') format('woff'),  
+         url('~/Fonts/IrasnSANSE/Iran-Sans.ttf') format('truetype');
+}*/
+
 @font-face {
     font-family: Awesome;
     font-style: normal;
     font-weight: normal;
-    src: url('../Fonts/Awesome/fa-light-300.eot');
-    src: url('../Fonts/Awesome/fa-light-300.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-         url('../Fonts/Awesome/fa-light-300.woff2') format('woff2'),  /* Chrome36+, Opera24+*/
-         url('../Fonts/Awesome/fa-light-300.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-         url('../Fonts/Awesome/fa-light-300.ttf') format('truetype');
+    src: url('~/Fonts/fontawesome-webfont.eot');
+    src: url('~/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('~/Fonts/fontawesome-webfont.woff2') format('woff2'), /* Chrome36+, Opera24+*/
+    url('~/Fonts/fontawesome-webfont.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('~/Fonts/fontawesome-webfont.ttf') format('truetype');
 }
 
 a {

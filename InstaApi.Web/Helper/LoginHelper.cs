@@ -1,10 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-using InstagramApiSharp.API;
+﻿using InstagramApiSharp.API;
 using InstagramApiSharp.API.Builder;
 using InstagramApiSharp.Classes;
 using InstagramApiSharp.Logger;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace InstaApi.Web.Helper
 {

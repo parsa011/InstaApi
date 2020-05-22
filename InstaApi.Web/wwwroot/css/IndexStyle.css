@@ -1,7 +1,3 @@
-@font-face {
-    font-family: "name";
-    src: url(fonts/font_Medium.eot) format("eot"), url(fonts/font_Medium.ttf) format("truetype"), url(fonts/font_Medium.woff) format("woff");
-}
 
 * {
     padding: 0;
@@ -9,7 +5,7 @@
 }
 
 body {
-    font-family: "name";
+
     direction: rtl;
     background-color: #dcdcdca3;
 }
