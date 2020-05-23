@@ -80,7 +80,7 @@
                 <div class="main-list-footer">
                     <i id="icon-left" onclick="mymarkbt(this)" style="margin-left: 9px;" class="fa fa-bookmark-o"></i>
                     <i id="icon-left" style="margin-left: 9px;" class="fa fa-paper-plane-o"></i>
-                    <i id="icon-lefts" onclick="mylikebt(this)" class="fa fa-heart-o" @(item.HasLiked ? "style='color: rgb(237, 73, 86);'" : "")></i>
+                    <i id="icon-lefts" onclick="mylikebt(this)" class="fa fa-heart-o" style='@(item.HasLiked ? "color: rgb(237, 73, 86)" :"")'></i>
                     <p class="mt-3">Likes @item.LikesCount</p>
                     @foreach (var likers in item.Likers)
                     {
@@ -117,7 +117,19 @@
                     <hr>
                 </div>
                 <div class="row">
-                    @foreach (var item in Model.Stories.Value.Items.Take(5))
+                    @foreach (var item in Model.Stories.Value.PostLives)
+                    {
+                        <div id="storiesOpen" class="Stories-list col-md-6 col-sm-6">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="/home/GeUserStoryFeed?userId=@item.User.Pk" data-storyId="@item.User.Pk">
+                                    <img src="@item.User.ProfilePicUrl" class="" alt="">
+                                    <p>@item.User.UserName</p>
+                                    <span class="badge badge-danger">was live</span>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                    @foreach (var item in Model.Stories.Value.Items)
                     {
                         <div id="storiesOpen" class="Stories-list col-md-6 col-sm-6">
                             <div class="d-flex justify-content-center align-items-center">
