@@ -41,21 +41,24 @@
                 <h2>Direct</h2>
             </div>
             <hr>
-            @foreach (var item in Model.Inbox.Value.Inbox.Threads)
+            @if (Model.Inbox.Value.Inbox.Threads != null)
             {
-                <div class="direct-main">
-                    <a href="">
-                        <div class="d-flex align-items-center">
-                            <img src="@item.Users.Last().ProfilePicUrl" alt="">
-                            <p class="d-inline ml-2 mt-2" @(item.HasUnreadMessage ? "style='font-weight: bolder;'" : "")>
-                                @item.Title
-                            </p>
-                        </div>
-                        <h6>
-                            <i class="fa  @(item.Muted ? "fa-bell-slash" : "fa-bell") "></i>
-                        </h6>
-                    </a>
-                </div>
+                @foreach (var item in Model.Inbox.Value.Inbox.Threads)
+                {
+                    <div class="direct-main">
+                        <a href="">
+                            <div class="d-flex align-items-center">
+                                <img src="@item.Users.Last().ProfilePicUrl" alt="">
+                                <p class="d-inline ml-2 mt-2" style='@(item.HasUnreadMessage ? "font-weight: bolder;" : "")'>
+                                    @item.Title
+                                </p>
+                            </div>
+                            <h6>
+                                <i class="fa  @(item.Muted ? "fa-bell-slash" : "fa-bell") "></i>
+                            </h6>
+                        </a>
+                    </div>
+                }
             }
         </div>
     </div>
@@ -71,6 +74,7 @@
                     <video controls="controls">
                         <source src="@(item.Videos.Any() ? item.Videos.First().Uri : null)" type="" />
                     </video>
+                    <img id="imgPro" src="@(item.Images.Any() ? item.Images.First().Uri : null)l" alt="">
                     @* <img id="imgPost" src="@(item.Videos.Any() ? item.Videos.First().Uri : null)" alt="">*@
                     <div id="likePost" class="iconLike" style="display: none">
                         <i class="fa fa-heart" style="color: white;"></i>
@@ -106,7 +110,6 @@
                     </div>
                 </div>
             </div>
-
         }
     </div>
     <div class="main-left col-md-3 col-sm-12">
@@ -134,7 +137,7 @@
                         <div id="storiesOpen" class="Stories-list col-md-6 col-sm-6">
                             <div class="d-flex justify-content-center align-items-center">
                                 <a href="/home/GeUserStoryFeed?userId=@item.User.Pk" data-storyId="@item.User.Pk">
-                                    <img src="@item.User.ProfilePicUrl" class="@(item.Seen < 0 ? "seenedStory" : "")" alt="">
+                                    <img src="@item.User.ProfilePicUrl" class="@(item.Seen > 0 ? "seenedStory" : "")" alt="">
                                     <p>@item.User.UserName</p>
                                 </a>
                             </div>

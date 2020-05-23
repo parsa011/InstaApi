@@ -36,6 +36,10 @@ namespace InstaApi.Web.Controllers
             }
             await LoginHelper.Login(model.UserName, model.Password);
             _instaApi = await LoginHelper.GetApi();
+            if (_instaApi == null)
+            {
+                return View("Index",model);
+            }
             return Redirect($"/{(await _instaApi.GetCurrentUserAsync()).Value.UserName}");
         }
     }
