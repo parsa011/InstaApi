@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using InstagramApiSharp.API;
@@ -38,6 +39,7 @@ namespace InstaApi.Web
                 DefaultErrorTitle = "خطا"
 
             });
+            services.AddScoped<PersianCalendar, PersianCalendar>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

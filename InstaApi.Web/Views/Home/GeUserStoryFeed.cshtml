@@ -1,0 +1,43 @@
+﻿@model InstagramApiSharp.Classes.Models.InstaReelFeed
+@{
+    ViewBag.Title = "استوری های کاربر";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> addedMedias = new List<string>();
+}
+
+<h1>@Model.User.UserName</h1>
+<h1>@Model.User.FullName</h1>
+<img src="@Model.User.ProfilePicture" alt="Alternate Text" />
+<hr />
+@foreach (var item in Model.Items)
+{
+    foreach (var image in item.ImageList)
+    {
+        if (addedMedias.Contains(image.Uri))
+        {
+            break;
+        }
+        else
+        {
+            addedMedias.Add(image.Uri);
+        }
+        <img src="@image.Uri" width="250" height="200" alt="Alternate Text" />
+    }
+}
+@foreach (var item in Model.Items)
+{
+    foreach (var videos in item.VideoList)
+    {
+        if (addedMedias.Contains(videos.Uri))
+        {
+            break;
+        }
+        else
+        {
+            addedMedias.Add(videos.Uri);
+        }
+        <video controls="controls" height="200" width="200">
+            <source src="@videos.Uri" type="" />
+        </video>
+    }
+}

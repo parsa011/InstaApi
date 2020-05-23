@@ -5,14 +5,14 @@ var Serch = document.getElementById("search");
 var txtSearchText = document.querySelector('.text-search');
 var IconSearch = document.getElementById("search-icon");
 var CloseSearch = document.getElementById("close-Search");
-InputSearch.addEventListener("click", SearchBox)
+InputSearch.addEventListener("click", SearchBox);
 
 function SearchBox() {
     CloseSearch.style.display = "inline-block";
 }
 // Serch hide and show
 InputSearch.addEventListener("keyup", function() {
-    TserchNone(this)
+    TserchNone(this);
 })
 
 function TserchNone(eh) {
@@ -25,7 +25,7 @@ function TserchNone(eh) {
     }
 }
 //close serch
-CloseSearch.addEventListener("click", closeSerch)
+CloseSearch.addEventListener("click", closeSerch);
 
 function closeSerch(eh) {
     InputSearch.value = "";
@@ -108,8 +108,8 @@ function mylikebt(obj) {
 ////// Modal Stories 
 var imgStori = document.getElementById("imgStori");
 var PausedStories = document.getElementById("PausedStories");
-imgStori.addEventListener("mousedown", PausedStori)
-imgStori.addEventListener("mouseup", PausedStorileve)
+imgStori.addEventListener("mousedown", PausedStori);
+imgStori.addEventListener("mouseup", PausedStorileve);
 
 function PausedStori() {
     PausedStories.style.display = "block";
@@ -128,23 +128,23 @@ commentstoris.addEventListener("keyup", function() {
 
 function InputSendmasseg(obj) {
     if (obj.value == "") {
-        textinputs.style.display = "block"
+        textinputs.style.display = "block";
     } else {
-        textinputs.style.display = "none"
+        textinputs.style.display = "none";
     }
 }
 
 //// modal stories close
 var closeStori = document.getElementById("closeStori");
 var modals = document.getElementById("modals");
-closeStori.addEventListener("click", closeStories)
+closeStori.addEventListener("click", closeStories);
 
 function closeStories() {
-    modals.style.display = "none"
+    modals.style.display = "none";
 }
 //// stories open
 var storiesOpen = document.getElementById("storiesOpen");
-storiesOpen.addEventListener("click", openstories)
+storiesOpen.addEventListener("click", openstories);
 
 function openstories() {
     if (modals.style.display == "none") {

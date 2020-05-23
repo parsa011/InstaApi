@@ -7,5 +7,6 @@ namespace InstaApi.Common.ViewModels
     {
         public IResult<InstaDirectInboxContainer> Inbox { get; set; }
         public IResult<InstaFeed> Feed { get; set; }
+        public IResult<InstaStoryFeed> Stories { get; set; }
     }
 }
