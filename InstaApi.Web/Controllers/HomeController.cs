@@ -21,6 +21,7 @@ namespace InstaApi.Web.Controllers
                 .GetDirectInboxAsync(PaginationParameters.MaxPagesToLoad(1));
             var feed = await api.FeedProcessor.GetUserTimelineFeedAsync(PaginationParameters.MaxPagesToLoad(2));
             var stories = await api.StoryProcessor.GetStoryFeedAsync();
+            
             TempData["UserName"] = (await api.GetCurrentUserAsync()).Value.UserName;
             return View(new IndexViewModel
             {
